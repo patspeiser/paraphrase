@@ -27,5 +27,15 @@ angular.module('app')
 				return EventService.findById($stateParams.id);
 			}
 		}
+	})
+	.state('events', {
+		url: '/events',
+		templateUrl: '/events/event-list.html',
+		controller: 'EventsCtrl',
+		resolve: {
+			events: function(EventService){
+				return EventService.findAll();
+			}
+		}
 	});
 });

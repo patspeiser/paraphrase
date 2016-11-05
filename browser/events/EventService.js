@@ -1,10 +1,12 @@
 angular.module('app')
 	.factory('EventService', function($http){
+		var events = [];
 		return {
 			findAll: function(){
 				return $http.get('/api/events')
 					.then(function(result){
-						return result.data;
+						angular.copy(result.data, events)
+						return events;
 					});
 			},
 
@@ -18,7 +20,8 @@ angular.module('app')
 			create: function(name, year, longPostId){
 				return $http.post('/api/events', {name: name, year: year, longPostId: longPostId})
 					.then(function(result){
-						return result.data;
+						events.push(result.data);
+						return result.data; 
 					});
 			}
 		};

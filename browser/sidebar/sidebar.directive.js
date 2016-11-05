@@ -6,7 +6,7 @@ angular.module('app')
 				event: '='
 			},
 			templateUrl: '/sidebar/sidebar.html',
-			controller: function(EventService, $scope){
+			controller: function(EventService, $scope, $rootScope){
 				EventService.findAll()
 				.then(function(events){
 					$scope.events = events;

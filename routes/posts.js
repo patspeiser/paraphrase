@@ -25,7 +25,8 @@ router.post('/:userId', function(req, res, next){
 	Post.create({
 		text: req.body.text,
 		userId: req.params.userId,
-		longPostId: req.body.longPostId
+		longPostId: req.body.longPostId,
+		eventId: req.body.eventId
 	})
 		.then(function(post){
 			res.send(post);

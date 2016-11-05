@@ -14,8 +14,8 @@ angular.module('app')
 						});
 				},
 
-				create: function(userId, text, longPostId){
-					return $http.post('/api/posts/' + userId, {text: text, longPostId: longPostId})
+				create: function(userId, text, longPostId, eventId){
+					return $http.post('/api/posts/' + userId, {text: text, longPostId: longPostId, eventId: eventId})
 						.then(function(result){
 							return result.data;
 						});

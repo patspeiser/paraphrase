@@ -11,16 +11,21 @@
 </div>
 
 {{longPost.text}}
-<div ng-show='longPost.posts'>
-	<li ng-repeat='post in longPost.posts'> {{post.text}}</li>
+<div> 
+	<p ng-show='longPost.events.length>0'><p>Summarize this using a bullet point list</p></p>
+	<div ng-show='longPost.posts'>
+		<li ng-repeat='post in longPost.posts'> {{post.text}}</li>
+	</div>
+	<div ng-show='longPost.events.length>0'>
+		<form name='form'>
+			<div class='form-group'>
+				<input class='form-control' ng-model='longPost.summary' type='text'/>
+				<button ng-click='summarize(longPost)' class='btn btn-primary'>Submit</button>
+			</div>
+		</form>
+	</div>
+	<div ng-show='longPost.events.length===0'>
+	<h4> Give the event a time frame and a name up above to add summary.</h4>
+	</div>
 </div>
-<div>
-	<form name='form'>
-		<div class='form-group'>
-			<input class='form-control' ng-model='longPost.summary' type='text'/>
-			<button ng-click='summarize(longPost)' class='btn btn-primary'>Submit</button>
-		</div>
-	</form>
-</div>
-
 <hr/>

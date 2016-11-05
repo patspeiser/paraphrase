@@ -11,6 +11,7 @@
 		<script src="/events/EventService.js"></script>
 		<script src="/events/event.directive.js"></script>
 		<script src="/events/events.controller.js"></script>
+		<script src="/events/event.controller.js"></script>
 		<script src="/sidebar/sidebar.directive.js"></script>
 		<script src="/posts/longPost.directive.js"></script>
 	</head>
@@ -18,8 +19,7 @@
 	<body ng-app='app'>
 	<div class='container'> 
 		<a ui-sref='home'> Home </a>
-		<a ui-sref='posts'>Recent Posts</a>
-		<a ui-sref='Events'>All Events</a>
+		<a ui-sref='events'>All Events</a>
 		<div class='row'>
 			<div class='col-md-2 container well'><sidebar></sidebar></div>
 			<div class='col-md-10 container well'><ui-view></ui-view></div>
