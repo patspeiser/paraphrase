@@ -11,11 +11,15 @@
   "license": "ISC",
   "dependencies": {
     "angular": "^1.5.8",
+    "angular-animate": "^1.5.8",
+    "angular-material": "^1.1.1",
     "angular-ui-router": "^0.3.2",
     "body-parser": "^1.15.2",
     "bootstrap": "^3.3.7",
     "express": "^4.14.0",
+    "install": "^0.8.2",
     "nodemon": "^1.11.0",
+    "npm": "^3.10.9",
     "pg": "^6.1.0",
     "sequelize": "^3.24.8"
   }

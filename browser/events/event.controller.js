@@ -12,14 +12,14 @@ angular.module('app')
 			});
 
 			$scope.summarize = function(longPost){
-					PostService.create($scope.userId,  longPost.summary, longPost.id, $stateParams.id)
-					.then(function(short){
-						console.log(longPost)
-						longPost.posts.push(short);
-						longPost.summary = '';
-					})
-					.catch(function(err){
-						console.log(err);
-					});
-				};
+				PostService.create($scope.userId,  longPost.summary, longPost.id, $stateParams.id)
+				.then(function(short){
+					console.log(longPost)
+					longPost.posts.push(short);
+					longPost.summary = '';
+				})
+				.catch(function(err){
+					console.log(err);
+				});
+			};
 	});

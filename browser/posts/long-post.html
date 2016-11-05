@@ -12,7 +12,7 @@
 
 {{longPost.text}}
 <div> 
-	<p ng-show='longPost.events.length>0'><p>Summarize this using a bullet point list</p></p>
+	<p><p ng-show='longPost.events.length>0'>Summarize this using a bullet point list</p></p>
 	<div ng-show='longPost.posts'>
 		<li ng-repeat='post in longPost.posts'> {{post.text}}</li>
 	</div>

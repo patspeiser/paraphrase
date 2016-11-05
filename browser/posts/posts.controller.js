@@ -1,6 +1,15 @@
 angular.module('app')
-	.controller('PostCtrl', function($scope, PostService){
+	.controller('PostCtrl', function($scope, PostService, LongPostService){
 		$scope.user = 1;
+
+		LongPostService.findAll()
+			.then(function(posts){
+				console.log(posts);
+				$scope.longPosts = posts
+			})
+			.catch(function(err){
+				console.log(err);
+			});
 
 		PostService.findAll()
 			.then(function(posts){
@@ -15,6 +24,16 @@ angular.module('app')
 				.then(function(post){
 					$scope.created = true;
 					$scope.newestPost = post; 
+				})
+				.catch(function(err){
+					console.log(err);
+				});
+		};
+
+		$scope.addNew = function(){
+			LongPostService.create($scope.post.text)
+				.then(function(post){
+					$scope.longPosts.push(post);
 				})
 				.catch(function(err){
 					console.log(err);
