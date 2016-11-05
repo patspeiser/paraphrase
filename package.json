@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "SYNC=true node server.js",
     "start:dev": "SYNC=true DATABASE_URL=postgres://localhost/paraphrase nodemon server/server.js"
   },
   "author": "",
