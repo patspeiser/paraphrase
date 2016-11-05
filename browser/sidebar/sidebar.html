@@ -1,0 +1,4 @@
+Events
+	<div ng-show='events' ng-repeat='historicalEvent in events'> 
+		<a ui-sref='event({id: historicalEvent.id})'>{{historicalEvent.year}}: {{historicalEvent.name}}</a> 
+	</div>

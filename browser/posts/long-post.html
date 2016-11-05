@@ -1,0 +1,26 @@
+<div ng-show='longPost.events.length>0'>
+	<h2> {{longPost.events[0].year}} {{longPost.events[0].name}} </h2>
+</div>
+
+<div ng-show='longPost.events.length === 0'>
+	<form name='eventForm'>
+		<input ng-model='longPost.eventYear' placeholder='add year' type='text'/>
+		<input ng-model='longPost.eventName' placeholder='add event name' type='text'/>
+		<button class='btn btn-primary' ng-click='addEvent(longPost)'>Add Event Info</button>
+	</form>
+</div>
+
+{{longPost.text}}
+<div ng-show='longPost.posts'>
+	<li ng-repeat='post in longPost.posts'> {{post.text}}</li>
+</div>
+<div>
+	<form name='form'>
+		<div class='form-group'>
+			<input class='form-control' ng-model='longPost.summary' type='text'/>
+			<button ng-click='summarize(longPost)' class='btn btn-primary'>Submit</button>
+		</div>
+	</form>
+</div>
+
+<hr/>
